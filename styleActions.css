@@ -1,0 +1,43 @@
+/* entête de nos actions */
+.nos_actions{
+    background-color: aquamarine;
+    height: 50vh;
+    text-align: center;
+}
+.actionsTitre1{
+    margin: auto;
+    padding-top: 12%;
+}
+
+/* statitiques des différentes couches touché par nos interventions */
+.statistique{
+    background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 90%;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+}
+.stat h1{
+    color: #0557aa;
+}
+.stat p{
+    color: white;
+}
+
+/* différents projets déjà mise en oeuvre dans l'organisation */
+.projet{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px ;
+}
+.projet_realise{
+    background-color: #0557aa;
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    border-radius: 20px;
+}

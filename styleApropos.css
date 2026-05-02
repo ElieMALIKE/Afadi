@@ -1,0 +1,738 @@
+body{
+    margin: 0px;
+    font-family: "Rubik", sans-serif;
+    background-color: #f7f8fb;
+}
+.btn{
+    padding :0% 2%;
+}
+
+/* bloc regroupant tout les elements de l'entete */
+
+img{
+    width: 150px;
+}
+header{
+    padding: 3px;
+    display: flex;
+    justify-content:space-between;
+}
+header p {
+    font-size: 0.8em;
+}
+.ent{
+    display : flex;
+    align-items: center;
+    gap: 40px;
+}
+nav{
+    display: inline-block;
+}
+.lien{
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+}
+.lien:hover{
+    font-weight: 300;
+    /* text-decoration-style: dotted; */
+    border-bottom: #0557aa 2px solid;
+}
+.bouton{
+    display: block;
+    color: white;
+    background-color: #0557aa;
+    width: 170px;
+    height: 40px;
+    border-radius: 0px 15px 15px 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bolder;
+    margin-right: 10px;
+    padding: 0px 10px;
+}
+
+/* section à propos */
+.about {
+    height: 700px;
+    background-image: url(images/Enseignante.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 20%;
+    margin-bottom: 70px ;
+}
+.about_title1{
+    font-size: 3.5em;
+    color: white;
+    padding-top: 250px ;
+    width: 80%;
+    padding-bottom: 20px;
+    margin: auto;
+}
+.about_title1 + p {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 400;
+    width: 80%;
+    margin: auto;
+}
+
+a:hover{
+    transform: scale(0.9);
+}
+/*  */
+main{
+    background-image: url(images/img_util/background2.png);
+}
+
+
+/* bloc qui justifie l'impact de nos actions */
+.impact{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.impact__bloc-text{
+    width: 60%;
+    margin-bottom: 50px;
+}
+.impact__bloc-text h1{
+    font-size: 3em;
+    color: #0557aa;
+}
+.impact__bloc-text p{
+    font-size: 1.2em;
+    padding-bottom: 20px;
+}
+.espace_logo{
+    margin: auto;
+    position: relative;
+    
+}
+.espace_logo img{
+    width: 500px;
+    position: absolute;
+    left:-200px;
+    bottom: -260px ;
+}
+.slogan{
+    background-color:#0558aa6c;
+    padding: 15px;
+    margin-top: 50px;
+    width: 510px;
+    border-radius: 1% 1% 1% 83% / 69% 17% 83% 31% ;
+}
+.slogan span{
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/* design responsive pour la partie impact */
+
+@media screen and (max-width: 900px){
+    .slogan{
+        width: 370px;
+        font-size: 80%;
+    }
+    .impact__bloc-text p{
+        font-size: 1.1em;
+    }
+    .espace_logo{
+        display: none;
+    }
+}
+
+/* partie réalisation des projets */
+.sec{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:50px;
+    padding-top: 70px;
+    padding-bottom:120px;
+}
+.cadre{
+    width: 350px;
+    background-color: #e1e1e375;
+    border-radius: 10% 10% 10% 10%;
+    padding: 40px;
+    /* margin-top: 60px; */
+    /* margin-bottom: 30px; */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+.titre img {
+    display: block;
+    margin: auto;
+}
+.text_icone h1{
+    text-align: center;
+}
+
+/* Nos valeurs fondamentaux */
+.nos_valeurs{
+    background-color: #01162caf;
+    color: white;
+    margin-bottom: 80px;
+}
+.section_valeur{
+    width: 80%;
+    margin: auto;
+    padding: 20px 0px;
+}
+.section_valeur h1{
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 3em;
+}
+.bloc_valeur{
+    
+    padding-bottom: 30px;
+}
+.valeur{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    width: 50%;
+    margin-bottom: 20px !important;
+    margin: auto;
+    padding: 10px 10px;
+    gap: 15px;
+    border-top: #0557aa dashed 3px;
+    transition: transform 0.8s ease;
+}
+.valeur:hover {
+    transform: translateY(4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  }
+.un{
+    border-radius: 5px 50px 15px 30px;
+}
+.deux{
+    border-radius: 50px 5px 30px 30px;
+}
+.trois{
+    border-radius: 30px 10px 50px 30px;
+}
+.quatre{
+    border-radius: 30px 30px 5px 50px;
+}
+.cinq{
+    border-radius: 10px 0px 60px 60px;
+}
+.valeur h3,p{
+    margin: 0px;
+    padding-bottom: 5px;
+}
+.icone_valeur img{
+    width: 80px;
+}
+
+@media screen and (max-width:850px) {
+    .valeur{
+        width: 90%;
+    }
+    .section_valeur{
+        width: 100%;
+    }
+}
+
+/* secteurs dans lesquelles AFADi interviens  */
+
+.secteur{
+    width: 80%;
+    margin: auto;
+}
+.secteur h1{
+    font-size: 3em;
+    margin-bottom: 50px;
+}
+.bloc_secteur{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 30px;
+    
+}
+.interventions{
+    border-radius: 35px;
+    background-color: #e1e1e375;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    width: 90%;
+}
+.interventions h2{
+    text-align: center;
+}
+.contenue{
+    display: flex;
+    align-items: center;
+    gap:20px;
+    height: 400px;
+}
+.sect{
+    width: 48%;
+    height: 400px;
+    border-radius: 0px 35px 0 35px;
+    aspect-ratio: 5 / 5;
+}
+.text{
+    
+    max-height: 350px;
+    /* overflow: scroll; */
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+.educ_image{
+    background-image: url(images/imageSecteur/education.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.promo_image{
+    background-image: url(images/imageSecteur/automatisation.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.urgence_image{
+    background-image: url(images/imageSecteur/urgence.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.plaidoyer_image{
+    background-image: url(images/imageSecteur/plaidoyer.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width:600px){
+    .contenue{
+        flex-direction: column;
+        height: 590px;
+    }
+    .sect{
+        width: 100%;
+        height: 250px;
+    }
+    .text{
+        padding: 20px;
+    }
+}
+
+/* pourquoi choisir ADAFI */
+
+.afadi {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #f7fbff, #ffffff);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+  
+  .afadi h1 {
+    font-size: 2.6rem;
+    color: #0b4da2;
+    margin-bottom: 20px;
+  }
+  
+  .afadi h1 strong {
+    color: #01162c /* doré AFADI */
+  }
+
+  .afadi-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+  }
+  
+  .pillar {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .pillar:hover {
+    transform: translateY(8px);
+  }
+  
+  .pillar span {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  .pillar h3 {
+    color: #0b4da2;
+    margin-bottom: 10px;
+  }
+  
+  .pillar p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .afadi-impact {
+    font-size: 1.15rem;
+    margin-top: 30px;
+  }
+
+
+/* partie footer */
+
+footer{
+    background-color: #01162c;
+    color: white;
+    padding: 100px 0px;
+}
+.info img{
+    width: 30%;
+}
+footer .all{
+    display: flex;
+    gap: 30px;
+    width: 80%;
+    margin: auto;
+    
+}
+.foot{
+    width: 50%;
+}
+.liens{
+    padding-left: 150px;
+}
+.liens a{
+    text-decoration: none;
+    color: white;
+}
+.foot h2{
+    color: #0557aa;
+    font-weight: 800;
+}
+
+/* responsive design, partie qui traite de design adaptative pour différents  types d'écran */
+
+@media screen and (max-width:600px) {
+    img{
+        width: 150px;
+    }
+    header{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header p {
+        font-size: 0.6em;
+    }
+    nav a{
+        font-size: 0.8em;
+    }
+    nav{
+        padding-bottom: 20px;
+    }
+    .bouton{
+        width: 120px;
+        height: 40px;
+        border-radius: 0px 15px 15px 15px;
+    }
+    .chap1{
+        width: 90%;
+        margin-left: 8%;
+        margin-top:5%;
+    }
+    .chap1 h1{
+        font-size: 2.5em;
+        padding-bottom: 2%;
+    }
+    .chap1 p{
+        font-size: 1.3em;
+        width: 90%;
+        margin-top : 10%;
+    }
+    .chap1 a{
+        font-size: 0.5em;
+        padding : 1% 0%;
+        margin-top : 10%;
+        margin: auto;
+    }
+    .partie1{
+        background-size:0;
+        background-repeat: no-repeat;
+    }
+    .responsive{
+        background-image: url(images/img_util/background1.png);
+        height: 320px;
+        background-size:150%;
+        background-position: right;
+    }
+    .point1{
+        font-size: 0.7em;
+    }
+    /* partie à propos */
+    .about_title1{
+        font-size: 2.1em;
+    }
+    .nos_activites {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    .boite{
+        width: 200px;
+        background-color: #ffffff;
+        padding :  10px 40px;
+        margin : auto;
+    }
+    /* partie impact */
+    .impact__bloc{
+        flex-direction: column-reverse;
+        gap: 40px;
+        
+    }
+    .impact__bloc-text{
+        width: 100%;
+    }
+    .jus{
+        text-align: center;
+    }
+    .impact__bloc-text h1{
+        font-size: 2.5em;
+    }
+    .impact__bloc-image{
+        width: 450px;
+        margin: auto;
+        
+    }
+    .image1{
+        width: 400px ;
+        height: 400px;
+    }
+    .image2{
+        left: 50px;
+        bottom: 10px;
+    }
+    .image3{
+        width: 150px ;
+        height: 150px;
+        right: -10px;
+        top: 170px;   
+    }
+    /* parties réalialisation */
+    .real__titre{
+        font-size: 2.5em;
+    }
+    .real__para{
+        margin-bottom: 50px;
+    }
+    .real__projet{
+        flex-direction: column;
+        gap : 50px
+    }
+    .reali{
+        width: 350px;
+        margin: 0;
+        margin: auto;
+    }
+    .rubrique .score{
+        font-size: 1.3em;
+    }
+    .text h2{
+        font-size: 1.2em;
+    }
+    .consulte p{
+        font-size: 0.7em;
+    }
+   /* partie équipe */
+    .partiequipe{
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    .pht{
+        width: 340px;
+        height: 340px;
+    }
+    .equipe h1{
+        font-size: 2em;
+    }
+    /* partie footer */
+    footer{
+        background-color: #01162c;
+        color: white;
+        padding: 50px 0px;
+    }
+    .info img{
+        width: 40%;
+    }
+    footer .all{
+        flex-direction: column;
+        gap: 30px;
+        width: 80%;
+        margin: auto;
+        
+    }
+    .foot{
+        width: 100%;
+    }
+    .liens{
+        padding-left: 0px;
+    }
+    .liens a{
+        text-decoration: none;
+        color: white;
+    }
+    .foot h2{
+        color: #0557aa;
+        font-weight: 800;
+    }
+}
+
+@media screen and (min-width:600px) and  (max-width:1200px) {
+    img{
+        width: 150px;
+    }
+   
+    header p {
+        font-size: 0.6em;
+    }
+    nav a{
+        font-size: 0.8em;
+    }
+    nav{
+        padding-bottom: 20px;
+    }
+    .bouton{
+        width: 120px;
+        height: 40px;
+        border-radius: 0px 15px 15px 15px;
+    }
+    .chap1{
+        width: 45%;
+        margin-left: 8%;
+        margin-top:5%;
+    }
+    .chap1 h1{
+        font-size: 2.5em;
+        padding-bottom: 2%;
+    }
+    .chap1 p{
+        font-size: 1.3em;
+        width: 90%;
+        margin-top : 10%;
+    }
+    .chap1 a{
+        font-size: 0.5em;
+        padding : 1% 0%;
+        margin-top : 10%;
+        margin: auto;
+    }
+    .partie1{
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position:120px;
+    }
+    .point1{
+        font-size: 0.7em;
+    }
+    /* partie à propos */
+    .about_title1{
+        font-size: 2.1em;
+    }
+    .nos_activites {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 50px ;
+        gap: 50px;
+    }
+    .boite{
+        width: 200px;
+        height: 350px;
+        background-color: #ffffff;
+        padding :  10px 40px;
+        margin : auto;
+    }
+    /* partie impact */
+    .impact__bloc{
+        flex-direction: column-reverse;
+        gap: 40px;
+        
+    }
+    .impact__bloc-text{
+        width: 100%;
+    }
+    .jus{
+        text-align: center;
+    }
+    .impact__bloc-text h1{
+        font-size: 2.5em;
+    }
+    .impact__bloc-image{
+        width: 450px;
+        margin: auto;
+        
+    }
+    .image1{
+        width: 400px ;
+        height: 400px;
+    }
+    .image2{
+        left: 50px;
+        bottom: 10px;
+    }
+    .image3{
+        width: 150px ;
+        height: 150px;
+        right: -10px;
+        top: 170px;   
+    }
+    /* parties réalialisation */
+    .real__titre{
+        font-size: 2.5em;
+    }
+    .real__para{
+        margin-bottom: 50px;
+    }
+    .real__projet{
+        flex-wrap: wrap;
+        gap : 50px
+    }
+    .reali{
+        width: 350px;
+        margin: 0;
+        margin: auto;
+    }
+    .rubrique .score{
+        font-size: 1.3em;
+    }
+    .text h2{
+        font-size: 1.2em;
+    }
+    .consulte p{
+        font-size: 0.7em;
+    }
+   /* partie équipe */
+    .partiequipe{
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    .pht{
+        width: 340px;
+        height: 340px;
+    }
+    .equipe h1{
+        font-size: 2em;
+    }
+    /* partie footer */
+    .info img{
+        width: 40%;
+    }
+}
+
