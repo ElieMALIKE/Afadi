@@ -7,54 +7,6 @@ body{
     padding :0% 2%;
 }
 
-/* bloc regroupant tout les elements de l'entete */
-
-img{
-    width: 150px;
-}
-header{
-    padding: 3px;
-    display: flex;
-    justify-content:space-between;
-}
-header p {
-    font-size: 0.8em;
-}
-.ent{
-    display : flex;
-    align-items: center;
-    gap: 40px;
-}
-nav{
-    display: inline-block;
-}
-.lien{
-    margin-left: 20px;
-    text-decoration: none;
-    color: black;
-}
-.lien:hover{
-    font-weight: 300;
-    /* text-decoration-style: dotted; */
-    border-bottom: #0557aa 2px solid;
-}
-.bouton{
-    display: block;
-    color: white;
-    background-color: #0557aa;
-    width: 170px;
-    height: 40px;
-    border-radius: 0px 15px 15px 15px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-weight: bolder;
-    margin-right: 10px;
-    padding: 0px 10px;
-}
-
 /* section à propos */
 .about {
     height: 700px;
@@ -63,6 +15,19 @@ nav{
     background-repeat: no-repeat;
     background-position: 20%;
     margin-bottom: 70px ;
+    position: relative;
+    z-index: 1;
+}
+.about::before{
+    content: "ggg";
+    background: linear-gradient(0.75turn, #3f87a600, #00000092);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+
 }
 .about_title1{
     font-size: 3.5em;
@@ -80,9 +45,6 @@ nav{
     margin: auto;
 }
 
-a:hover{
-    transform: scale(0.9);
-}
 /*  */
 main{
     background-image: url(images/img_util/background2.png);
@@ -118,6 +80,7 @@ main{
     position: absolute;
     left:-200px;
     bottom: -260px ;
+    z-index: 10;
 }
 .slogan{
     background-color:#0558aa6c;
@@ -242,72 +205,7 @@ main{
     }
 }
 
-/* secteurs dans lesquelles AFADi interviens  */
 
-.secteur{
-    width: 80%;
-    margin: auto;
-}
-.secteur h1{
-    font-size: 3em;
-    margin-bottom: 50px;
-}
-.bloc_secteur{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    /* grid-template-columns: 1fr 1fr; */
-    gap: 30px;
-    
-}
-.interventions{
-    border-radius: 35px;
-    background-color: #e1e1e375;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    width: 90%;
-}
-.interventions h2{
-    text-align: center;
-}
-.contenue{
-    display: flex;
-    align-items: center;
-    gap:20px;
-    height: 400px;
-}
-.sect{
-    width: 48%;
-    height: 400px;
-    border-radius: 0px 35px 0 35px;
-    aspect-ratio: 5 / 5;
-}
-.text{
-    
-    max-height: 350px;
-    /* overflow: scroll; */
-    padding-right: 10px;
-    padding-bottom: 20px;
-}
-.educ_image{
-    background-image: url(images/imageSecteur/education.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.promo_image{
-    background-image: url(images/imageSecteur/automatisation.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.urgence_image{
-    background-image: url(images/imageSecteur/urgence.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.plaidoyer_image{
-    background-image: url(images/imageSecteur/plaidoyer.jpg);
-    background-size: cover;
-    background-position: center;
-}
 
 @media screen and (max-width:600px){
     .contenue{
@@ -323,6 +221,60 @@ main{
     }
 }
 
+/* notre équipe */
+.notre-Equipe{
+    width: 80%;
+    margin: auto;
+}
+.equipe{
+    margin: 150px 0px;
+}
+.partiequipe{
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+.equipe1{
+    background-image: url(images/equipe/PHOTO-2023-07-27-08-31-10.jpg);
+}
+.equipe2{
+    background-image: url(images/equipe/PHOTO-2024-08-07-07-58-45.jpg);
+}
+.equipe3{
+    background-image: url(images/equipe/PHOTO-2025-07-27-09-32-01.jpg);
+}
+.equipe4{
+    background-image: url(images/equipe/PHOTO-2025-07-28-10-34-43\ 2.jpg);
+}
+.pht{
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    border-radius: 50% 50%;
+    border: #ffff solid 10px;
+}
+.blocequipe .nom,.fonction{
+    margin : 0px;
+    padding : 0px;
+    text-align: center;
+}
+.equipe h1{
+    font-size: 2.5em;
+}
+.point1{
+    color: #0557aa;
+    font-weight: 700;
+    margin: 0px;
+    font-size: 1.2em;
+}
+.point1 span{
+    padding-bottom: 5px;
+    border-bottom: #0557aa 4px solid;
+}
+.texte-equipe{
+    margin-bottom: 50px;
+}
+
 /* pourquoi choisir ADAFI */
 
 .afadi {
@@ -333,90 +285,59 @@ main{
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     text-align: center;
-  }
-  
-  .afadi h1 {
+}
+
+.afadi h1 {
     font-size: 2.6rem;
     color: #0b4da2;
     margin-bottom: 20px;
-  }
-  
-  .afadi h1 strong {
-    color: #01162c /* doré AFADI */
-  }
+}
 
-  .afadi-pillars {
+.afadi h1 strong {
+    color: #01162c /* doré AFADI */
+}
+
+.afadi-pillars {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin: 50px 0;
-  }
-  
-  .pillar {
+}
+
+.pillar {
     background: #ffffff;
     border-radius: 16px;
     padding: 30px 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
-  }
-  
-  .pillar:hover {
+}
+
+.pillar:hover {
     transform: translateY(8px);
-  }
-  
-  .pillar span {
+}
+
+.pillar span {
     font-size: 2.5rem;
     display: block;
     margin-bottom: 15px;
-  }
-  
-  .pillar h3 {
+}
+
+.pillar h3 {
     color: #0b4da2;
     margin-bottom: 10px;
-  }
-  
-  .pillar p {
+}
+
+.pillar p {
     font-size: 0.95rem;
     color: #555;
-  }
-  
-  .afadi-impact {
+}
+
+.afadi-impact {
     font-size: 1.15rem;
     margin-top: 30px;
-  }
+}
 
 
-/* partie footer */
-
-footer{
-    background-color: #01162c;
-    color: white;
-    padding: 100px 0px;
-}
-.info img{
-    width: 30%;
-}
-footer .all{
-    display: flex;
-    gap: 30px;
-    width: 80%;
-    margin: auto;
-    
-}
-.foot{
-    width: 50%;
-}
-.liens{
-    padding-left: 150px;
-}
-.liens a{
-    text-decoration: none;
-    color: white;
-}
-.foot h2{
-    color: #0557aa;
-    font-weight: 800;
-}
 
 /* responsive design, partie qui traite de design adaptative pour différents  types d'écran */
 
