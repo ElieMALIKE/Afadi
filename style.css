@@ -3,27 +3,33 @@ body{
     font-family: "Rubik", sans-serif;
     background-color: #f7f8fb;
 }
-.btn{
-    padding :0% 2%;
+.fa-house{
+    width: 200px;
+    
 }
 
 
 /* bloc regroupant tout les elements de l'entete */
 
 .partie1{
-    background-image: url(images/img_util/background1.png);
-    background-size:85%;
+    background-image: url(images/img_util/background3.png);
     background-repeat: no-repeat;
-    background-position: 10cm;
-    padding-bottom: 10%;  
+    background-position: top right;
+    
+    position: relative;
+    z-index: 1;
+    height: 100vh;
 }
 img{
     width: 200px;
 }
 header{
-    padding: 3px;
+    padding: 0px 30px;
     display: flex;
     justify-content:space-between;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
 }
 header p {
     font-size: 0.8em;
@@ -48,11 +54,11 @@ nav{
 }
 .bouton{
     display: block;
-    color: white;
-    background-color: #0557aa;
+    color: #0557aa;
     width: 170px;
     height: 40px;
     border-radius: 0px 15px 15px 15px;
+    border :#0557aa 1px solid ;
     text-align: center;
     display: flex;
     align-items: center;
@@ -61,11 +67,48 @@ nav{
     font-weight: bolder;
     margin-right: 10px;
     padding: 0px 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    
 }
+.bouton::after{
+    content: "";
+    display: block;
+    background-color: #0557aa;
+    width: 170px;
+    height: 40px;
+    border-radius: 0px 15px 15px 15px;
+    border :#0557aa 1px solid ;
+    padding: 0px 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform: translate(-200px);
+    transition: transform 200ms;
+}
+.bouton:hover::after{
+    transform: translate(0);
+}
+.bouton:hover{
+    color: white;
+}
+.fa-arrow-right-long{
+    padding-left:15px;
+    font-size:20px;
+    display: none !important ;
+}
+.bouton:hover .fa-arrow-right-long{
+    display: block !important;
+}
+
 .chap1{
     width: 38%;
     margin-left: 8%;
-    margin-top:5%;
+    margin-top:10%;
 }
 .chap1 h1{
     font-size: 3.5em;
@@ -81,12 +124,56 @@ strong{
 }
 .chap1 .bouton{
     font-size: 0.5em;
-    padding : 1% 2%;
     margin-top : 10%;
 }
 
-/* bloc regroupant les statitistiques */
+/* ========================================================= 
+responsive PARTIE 1*/
+@media screen and (max-width:1350px){
+    header{
+        background-color: rgba(255, 255, 255, 0.434);   
+    }
+    .chap1 h1{
+        font-size: 2.5em;
+    }
+    .partie1{
+        background-position:50% ;
+    }
+    .chap1{
+        width: 50%;
+    }
+}
+@media screen and (max-width:500px) {
+    header{
+        flex-direction: column;
+    }
+    header .bouton{
+        margin: 40px;
+    }
+    .partie1{
+        background-color: #0558aa56 ;
+        background-position: 40%;
+    }
+    .chap1{
+        width: 80%;
+        text-align: center;
+    }
+    .chap1 h1{
+        font-size: 2.2em;
+        padding: 30px 0px;
+    }
+    .chap1 p{
+        width: 100%;
+        margin: 50px 0px;
+    }
+    .chap1 .bouton{
+        margin: auto;
+    }
+}
+
+/* ============================================================= */
 /* statitiques des différentes couches touché par nos interventions */
+
 .statistique{
     background: linear-gradient(135deg, #f7fbff, #ffffff);
     box-shadow: 00px 0px 20px black;
@@ -107,94 +194,226 @@ strong{
 .stat p{
     color: rgb(0, 0, 0);
 }
+@media screen and (max-width:1350px){
+    .statistique{
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .stat{
+        
+    }
+    .stat h1{
+        font-size: 1.2em;
+    }
+}
 
+/* ======================================================== */
 /* bloc regroupant les élement de la section à propos */
 
 .about {
     width: 80%;
     margin: auto;
     margin: top;
+    padding-top: 50px;
+}
+/* stype de titre de section */
+.point1{
+    color: #0557aa;
+    font-weight: 700;
+    margin: 0px;
+    font-size: 1.2em;
+}
+.point1 span{
+    padding-bottom: 5px;
+    border-bottom: #0557aa 4px solid;
 }
 .about_title1{
-    font-size: 3.5em;
-    text-align: center;
-    margin: 0px;
+    font-size: 2.5em;
 }
 .about_title1 + p {
-    text-align: center;
-    padding-bottom: 40px;
+    padding-bottom: 0px;
 }
 .nos_activites {
     display: flex;
     justify-content:space-evenly;
     flex-wrap:wrap;
-    gap : 10px;
+    gap: 10px;
 }
 .boite{
-    width: 250px;
-    background-color: #ffffff;
-    padding :  10px 25px;
-    border-radius: 0px 40px 0px 40px;
+    width: 310px;
+    border-radius: 0px 40px 0px 10px;
     margin : 25px 0px;
     box-shadow: rgb(130, 129, 129) 0px 4px 15px;
+    transform: scale(1);
     /* effet transition */
-    transition-property: transform;
-    transition-duration: 0,1sec;
+    transition : transform 300ms;
 }
 .boite:hover{
-    box-shadow: #01162c 5px 10px 20px;
+    transform: scale(1.07);
 }
-a:hover{
-    transform: scale(0.9);
+.texte_explicatif{
+    padding: 19px;
 }
-.boite h2{
-    font-size: 1em;
-    text-align: center;
-    margin-bottom: 0px;
+.icone{
+    border-radius: 0px 40px 0px 0px;
+    height: 230px;
+    position: relative;
 }
-.boite p{
-    font-size: 0.9em;
-    text-align: center;
-    padding:10% 0%;
+.pour_education{
+    background-image: url(images/imageSecteur/education1.jpg);
+    background-size: cover;
 }
-.icone .img{
-    margin: auto;
+.pour_promotion{
+    background-image: url(images/imageSecteur/automatisation.jpg);
+    background-size: cover;
+}
+.pour_urgence{
+    background-image: url(images/imageSecteur/urgence.jpg);
+    background-size: cover;
+}
+.pour_plaidoyer{
+    background-image: url(images/imageSecteur/plaidoyer.jpg);
+    background-size: cover;
+}
+.img{
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 70px;
+    color: #26588e;
+}
+.info{
+    margin-bottom: 20px;
+    margin-left:19px
+}
+.info a {
+    text-decoration: none;
+    color:#0557aa;
+    padding: 5px;
 }
 main{
     background-image: url(images/img_util/background2.png);
 }
 
-
+/* ================================================================ */
 /* bloc regroupant les élement de la section Impact de nos actions */
-
 
 .impact{
     margin: 100px 0px;
 }
 .impact__bloc{
-    gap: 40px;
     width: 80%;
     margin: auto;
-}
-
-.impact__bloc-text h1{
-    font-size: 3em;
-    text-align: center;
-    margin: 0px;
-    padding-bottom: 40px;
-    
 }
 
 .img_impact img{
     width: 100%;
 }
-.impact__bloc-text h3{
-    font-size: 1.2em;
+.impact__bloc-contenue{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.conteneur_impact{
+    width: 60%;
+}
+.img_impact{
+    width: 70%;
+    margin-left: 30%;
+}
+.impact_text{
+    background-color: #f7f8fb;
+    border: #ffffff solid 10px;
+    border-radius: 5px;
+    padding: 30px;
+}
+@media screen and (max-width:1350px){
+   
 }
 .impact__bloc-text .txt{
     font-size: 1.2em;
     width: 90%;
 }
+@media screen and (max-width : 500px){
+    .conteneur_impact{
+        width: 90%;
+    }
+    .img_impact{
+        width: 100%;
+        margin-left: 10%;
+    }
+}
+
+/* Programme phares mise en oeuvre par AFADi   */
+
+.programmes{
+    margin: auto;
+    padding: 30px 0px 150px 0px;
+    width: 80%;
+}
+
+.titre h1{
+    font-size: 2.5em;
+}
+.nos-programmes{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+.conteneur-programmes{
+    width: 320px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 3px black;
+    transition: transform 300ms;
+}
+.conteneur-programmes:hover{
+    transform: translateY(10px);
+}
+.conteneur-programmes:hover h3{
+    background-color: rgb(255, 255, 255) !important;
+    transform: rotateY(360deg);
+    color: #0557aa;
+}
+.img-programme{
+    background-image: url(imageProjet.png);
+    background-size: cover;
+    height: 250px;
+    border-radius: 20px 20px 0px 0px;
+    padding: 10px;
+}
+.img-programme h3{
+    background-color:#01162c;
+    color: white;
+    border-radius: 30px;
+    padding: 8px;
+    font-size: 1em;
+    width: 170px;
+    transition: background-color 500ms, transform 200ms;
+}
+.description-pgrm{
+    padding: 19px;
+    height: 110px;
+}
+.pgrm-visite{
+    width: 120px !important;
+    background-color: #0557aa !important;
+}
+.pgrm-credit{
+    width: 235px !important;
+    background-color: #000000 !important;
+}
+.pgrm-fourniture{
+    width: 200px !important;
+    background-color:#13312d !important;
+}
+
+
+
+
 
 /* partie réalisation des projets */
 .sec{
@@ -211,14 +430,14 @@ main{
     font-size: 1.1em;
 }
 .promenade{
-    background-image: url(imageProjet.png);
+    background-image: url(imageProjet);
 }
 .distri{
     background-image: url(imageProjet.png);
    
 }
 .incendi{
-    background-image: url(imageProjet.png);
+    background-image: url(imageProjet.pn);
 }
 .mod{
     border-radius: 40px;
@@ -236,58 +455,132 @@ main{
     font-size: 2.5em;
 }
 
+/* =================================================================== */
+/* parties qui concerne nos actions dans différentes domaines */
 
-/* notre équipe */
-.sec .equipe{
-    text-align: center; 
-    padding-bottom: 150px;
-    margin-top:100px ;
+.action{
+    background-color:#0557aa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0px;
 }
-.partiequipe{
+.conteneur_domaine{
+    width: 80%;
     display: flex;
     gap: 20px;
+    justify-content: center;
+    background-color: #ffffffed;
+    padding: 50px 0px;
+    border-radius: 10px;  
 }
-.equipe1{
-    background-image: url(images/equipe/PHOTO-2023-07-27-08-31-10.jpg);
+@media screen and (max-width:1500px){
+    .conteneur_domaine{
+        flex-direction: column;
+        align-items: center;
+    }
 }
-.equipe2{
-    background-image: url(images/equipe/PHOTO-2024-08-07-07-58-45.jpg);
+.titre_domaine{
+    background-color: #0558aa24;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
 }
-.equipe3{
-    background-image: url(images/equipe/PHOTO-2025-07-27-09-32-01.jpg);
+@media screen and (max-width:1500px){
+    .titre_domaine{
+        width: 80%;
+        display: block;
+        
+    }
 }
-.equipe4{
-    background-image: url(images/equipe/PHOTO-2025-07-28-10-34-43\ 2.jpg);
+.contenu_domaine{
+    width: 60%;
+    display: flex;
+    background-color:#0558aa18;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 30px;
 }
-.pht{
-    width: 400px;
-    height: 400px;
-    background-size: cover;
-    border-radius: 50% 50%;
-    border: #ffff solid 10px;
+@media screen and (max-width:1500px){
+    .contenu_domaine{
+        flex-wrap: wrap;
+    }
 }
-.blocequipe .nom,.fonction{
-    margin : 0px;
-    padding : 0px;
+.images{
+    width: 300px;
+    
 }
-.equipe h1{
-    margin-top : 0px ;
-    font-size: 3em;
+.images img{
+    width: 300px;
+    height: 100%;
+    border-radius: 10px;
 }
-.point1{
-    color: #0557aa;
-    font-weight: 700;
-    margin: 0px;
+@media screen and (max-width:1500px){
+    .contenu_domaine{
+        width: 77%;
+    }
+}
+.dom{
+    background-color:#0558aa;
+    box-shadow: 0px 4px 5px black;
+    width: 200px;
     text-align: center;
-    font-size: 1.2em;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    font-weight: bolder;
+    color: antiquewhite;
+    transition: transform 200ms;
 }
-.jus{
-    text-align: left;
+@media screen and (max-width:1500px){
+    .onglet{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    .dom{
+        width: 180px;
+    }
+    .titre_domaine h2{
+        margin-left: 20px ;
+    }
+}
+.dom:hover{
+    background-color: white;
+    color: #0557aa;
+}
+.dom:focus{
+    background-color: white;
+    color: #0557aa;
+    transform: scale(1.8);
+}
+@media screen and (max-width:500px){
+    .onglet{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .dom{
+        font-size: 0.8em;
+        width: 100%;
+    }
+    .images img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
 }
 
 /* partie footer */
+
+
 footer{
     background-color: #01162c;
+    background-image: url(icone-logo.png);
+    background-repeat: repeat;
     color: white;
     padding: 100px 0px;
 }
@@ -301,12 +594,16 @@ footer .all{
     margin: auto;
     
 }
+@media screen and (max-width:1500px){
+    footer .all{
+        flex-wrap: wrap;
+    }
+}
 .foot{
     width: 50%;
+    
 }
-.liens{
-    padding-left: 150px;
-}
+
 .liens a{
     text-decoration: none;
     color: white;
@@ -315,299 +612,13 @@ footer .all{
     color: #0557aa;
     font-weight: 800;
 }
-
-/* responsive design */
-
-@media screen and (max-width:600px) {
-    img{
-        width: 150px;
-    }
-    header{
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    header p {
-        font-size: 0.6em;
-    }
-    nav a{
-        font-size: 0.8em;
-    }
-    nav{
-        padding-bottom: 20px;
-    }
-    .bouton{
-        width: 120px;
-        height: 40px;
-        border-radius: 0px 15px 15px 15px;
-    }
-    .chap1{
-        width: 90%;
-        margin-left: 8%;
-        margin-top:5%;
-    }
-    .chap1 h1{
-        font-size: 2.5em;
-        padding-bottom: 2%;
-    }
-    .chap1 p{
-        font-size: 1.3em;
-        width: 90%;
-        margin-top : 10%;
-    }
-    .chap1 a{
-        font-size: 0.5em;
-        padding : 1% 0%;
-        margin-top : 10%;
-        margin: auto;
-    }
-    .partie1{
-        background-size:0px;
-        background-repeat: no-repeat;
-        background-position: 100%;
-    }
-    .responsive{
-        background-image: url(images/img_util/background1.png);
-        height: 420px;
-        background-size:150%;
-        background-position: right;
-    }
-    .point1{
-        font-size: 0.7em;
-    }
-
-    /* partie à propos */
-    
-    /* partie impact */
-    .impact__bloc{
-        flex-direction: column-reverse;
-        gap: 40px;
-        
-    }
-    .impact__bloc-text{
-        width: 100%;
-    }
-    .jus{
-        text-align: center;
-    }
-    .impact__bloc-text h1{
-        font-size: 2.5em;
-    }
-    .impact__bloc-image{
-        width: 450px;
-        margin: auto;
-        
-    }
-    /* .image1{
-        width: 400px ;
-        height: 400px;
-    }
-    .image2{
-        left: 50px;
-        bottom: 10px;
-    }
-    .image3{
-        width: 150px ;
-        height: 150px;
-        right: -10px;
-        top: 170px;   
-    } */
-    /* parties réalialisation */
-    .real__titre{
-        font-size: 2.5em;
-    }
-    .real__para{
-        margin-bottom: 50px;
-    }
-    .real__projet{
-        flex-direction: column;
-        gap : 50px
-    }
-    .reali{
-        width: 350px;
-        margin: 0;
-        margin: auto;
-    }
-    .rubrique .score{
-        font-size: 1.3em;
-    }
-    .text h2{
-        font-size: 1.2em;
-    }
-    .consulte p{
-        font-size: 0.7em;
-    }
-   /* partie équipe */
-    .partiequipe{
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-    .pht{
-        width: 340px;
-        height: 340px;
-    }
-    .equipe h1{
-        font-size: 2em;
-    }
-    /* partie footer */
-    footer{
-        background-color: #01162c;
-        color: white;
-        padding: 50px 0px;
-    }
-    .info img{
-        width: 40%;
-    }
-    footer .all{
-        flex-direction: column;
-        gap: 30px;
-        width: 80%;
-        margin: auto;
-        
-    }
+@media screen and (max-width:500px){
     .foot{
-        width: 100%;
+        width: 100% !important;
     }
-    .liens{
-        padding-left: 0px;
-    }
-    .liens a{
-        text-decoration: none;
-        color: white;
-    }
-    .foot h2{
-        color: #0557aa;
-        font-weight: 800;
-    }
-}
-
-@media screen and (min-width:600px) and  (max-width:1200px) {
-    img{
-        width: 150px;
-    }
-   
-    header p {
-        font-size: 0.6em;
-    }
-    nav a{
-        font-size: 0.8em;
-    }
-    nav{
-        padding-bottom: 20px;
-    }
-    .bouton{
-        width: 120px;
-        height: 40px;
-        border-radius: 0px 15px 15px 15px;
-    }
-    .chap1{
-        width: 45%;
-        margin-left: 8%;
-        margin-top:5%;
-    }
-    .chap1 h1{
-        font-size: 2.5em;
-        padding-bottom: 2%;
-    }
-    .chap1 p{
-        font-size: 1.3em;
-        width: 90%;
-        margin-top : 10%;
-    }
-    .chap1 a{
-        font-size: 0.5em;
-        padding : 1% 0%;
-        margin-top : 10%;
-        margin: auto;
-    }
-    .partie1{
-        background-size:contain;
-        background-repeat: no-repeat;
-        background-position:120px;
-    }
-    .point1{
-        font-size: 0.7em;
-    }
-
-
-    /* partie à propos */
-   
-
-    /* partie impact */
-    .impact__bloc{
-        flex-direction: column-reverse;
-        gap: 40px;
-        
-    }
-    .impact__bloc-text{
-        width: 100%;
-    }
-    .jus{
-        text-align: center;
-    }
-    .impact__bloc-text h1{
-        font-size: 2.5em;
-    }
-    /* .impact__bloc-image{
-        width: 450px;
-        margin: auto;
-        
-    }
-    .image1{
-        width: 400px ;
-        height: 400px;
-    }
-    .image2{
-        left: 50px;
-        bottom: 10px;
-    }
-    .image3{
-        width: 150px ;
-        height: 150px;
-        right: -10px;
-        top: 170px;   
-    } */
-    /* parties réalialisation */
-    .real__titre{
-        font-size: 2.5em;
-    }
-    .real__para{
-        margin-bottom: 50px;
-    }
-    .real__projet{
-        flex-wrap: wrap;
-        gap : 50px
-    }
-    .reali{
-        width: 350px;
-        margin: 0;
-        margin: auto;
-    }
-    .rubrique .score{
-        font-size: 1.3em;
-    }
-    .text h2{
-        font-size: 1.2em;
-    }
-    .consulte p{
-        font-size: 0.7em;
-    }
-   /* partie équipe */
-    .partiequipe{
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-    .pht{
-        width: 340px;
-        height: 340px;
-    }
-    .equipe h1{
-        font-size: 2em;
-    }
-    /* partie footer */
     .info img{
-        width: 40%;
+        width: 50%;
     }
 }
+
 
